@@ -1,17 +1,15 @@
 def fib(n):    # write Fibonacci series up to n
     a, b = 0, 1
-    c=0
-    while c < n:
-#        print b,
+    for i in range(n):
         a, b = b, a+b
-        c+=1
-#    print '\n'
     return a
 
-i=0
-j=0
-while i<1000:
-    j+=1
-    i = len(str(fib(j)))
 
-print j, '\n', fib(j)
+nthdigit = raw_input("Please provide n for the nth number of the fibonacci sequence:\n")
+try:
+	nthdigit = int(nthdigit)
+	print fib(nthdigit)
+except:
+	print "That was not a number. Exiting with error code 1"
+
+
